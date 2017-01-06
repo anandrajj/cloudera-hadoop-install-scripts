@@ -1,0 +1,46 @@
+{
+	"name":"vm-anan-retest",
+ 	"key_name":"vm-create-key",
+ 	"cluster":[
+		    {"flavor":"512MB Standard Instance", 
+		     "image":"CentOS 6 (PVHVM)",
+		     "suffix":"sf",
+		     "size":"1",
+		     "hdfs-vol": [
+		                  {"hdfs-vol-name":"vol-2","mountpoint":"/dev/xvdd","mountdir":"/mnt/hdfsvol2","hdfs-vol-type":"SSD","hdfs-vol-size":"100"},
+						  {"hdfs-vol-name":"vol-1","mountpoint":"/dev/xvdb","mountdir":"/mnt/hdfsvol1","hdfs-vol-size":"120"}
+		       ],
+		      "script": [
+				{"name":"useradd.sh","cmd":"./useradd.sh anan jan dylan tempurer"},
+				{"name":"dummyscript.sh","cmd":"ls -l"}
+			]
+		    },
+		    {"flavor":"30 GB Memory v1",
+                     "image":"CentOS 6 (PVHVM)",
+                     "suffix":"mf",
+                     "size":"2",
+                     "hdfs-vol": [
+                                  {"hdfs-vol-name":"vol-2","mountpoint":"/dev/xvdd","mountdir":"/mnt/hdfsvol2","hdfs-vol-type":"SSD","hdfs-vol-size":"100"},
+                                  {"hdfs-vol-name":"vol-1","mountpoint":"/dev/xvdb","mountdir":"/mnt/hdfsvol1","hdfs-vol-size":"120"}
+                       ],
+                      "script": [
+                                {"name":"useradd.sh","cmd":"./useradd.sh anan jan dylan tempurer"},
+                                {"name":"dummyscript.sh","cmd":"ls -l"}
+                        ]
+                    },
+		    {"flavor":"3.75 GB Compute v1",
+                     "image":"CentOS 6 (PVHVM)",
+                     "suffix":"cf",
+                     "size":"2",
+                     "hdfs-vol": [
+                                  {"hdfs-vol-name":"vol-2","mountpoint":"/dev/xvdd","mountdir":"/mnt/hdfsvol2","hdfs-vol-type":"SATA","hdfs-vol-size":"100"},
+                                  {"hdfs-vol-name":"vol-1","mountpoint":"/dev/xvdb","mountdir":"/mnt/hdfsvol1","hdfs-vol-size":"120"}
+                       ],
+                      "script": [
+                                {"name":"useradd.sh","cmd":"./useradd.sh anan jan dylan tempurer"},
+                                {"name":"dummyscript.sh","cmd":"ls -l"},
+				{"none":"none"}
+                        ]
+                    }
+ 		  ]
+}
